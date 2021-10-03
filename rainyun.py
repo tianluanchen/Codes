@@ -9,9 +9,10 @@ from pathlib import Path
 
 
 class RainYun():
-    def __init__(self, user, pwd):
+    def __init__(self, user, pwd,log_path="rainyun_log.csv"):
         self.user = user
         self.pwd = pwd
+        self.log_path = log_path
         self.headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4644.0 Safari/537.36 Edg/96.0.1028.0",
             "origin": "https://www.rainyun.com",
@@ -68,13 +69,13 @@ class RainYun():
 
     def log(self):
         log_time = time.strftime("%Y/%m/%d %H:%M:%S")
-        log_file = Path('rainyun_log.csv')
+        log_file = Path(self.log_path)
         if log_file.is_file():
-            with open('rainyun_log.csv', 'a', encoding='utf-8') as f:
+            with open(self.log_path, 'a', encoding='utf-8') as f:
                 f.write(log_time + ',' + self.user +
                         ',' + self.sign_status + '\n')
         else:
-            with open('rainyun_log.csv', 'w', encoding='utf-8') as f:
+            with open(self.log_path, 'w', encoding='utf-8') as f:
                 f.write('date,user,status\n')
                 f.write(log_time + ',' + self.user +
                         ',' + self.sign_status + '\n')
@@ -86,6 +87,8 @@ if __name__ == '__main__':
     user = ""
     # 密码
     password = ""
+    # log存储路径可自定义，也可不填写，默认为"rainyun_log.csv"，注意文件名应为.csv后缀
+    # log_path = ""
     # 初始化填写密码账户
     demo = RainYun(user, password)
     # 登录
