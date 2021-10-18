@@ -1,5 +1,10 @@
 # My commonly used scripts 
 我常用的的脚本
+
+![Github stars](https://img.shields.io/github/stars/tianluanchen/scripts.svg)
+![Language](https://img.shields.io/badge/lang-python-blue)
+![Language](https://img.shields.io/badge/lang-shell-brightgreen)
+
 ## 介绍
 此仓库存储我常用的脚本，包括自己写的和收藏的。
 ## 脚本列表
