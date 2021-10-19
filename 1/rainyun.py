@@ -4,7 +4,7 @@ import time
 from pathlib import Path
 
 #    Author:        tianluanchen
-#    date：         2021/10/3
+#    date:          2021/10/3
 #    description:   Automatically sign in to receive points on rainyun
 
 
