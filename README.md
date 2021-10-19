@@ -10,7 +10,7 @@
 ## 脚本列表
 1. [rainyun.py](https://github.com/tianluanchen/scripts/blob/main/1/)
 > 雨云自动签到领取积分
-3. [蓝奏云资源管理 ](https://gitee.com/ayouth/scripts/tree/master/2)
+3. [蓝奏云资源管理 ](https://github.com/ayouth/scripts/tree/master/2)
 > 蓝奏云资源存储，转换直链，生成短链，链接保存 (coding)
 3. [v2ray安装/管理脚本 ](https://github.com/tianluanchen/scripts/tree/main/3)
 > 用来一键安装管理v2ray (fork)
