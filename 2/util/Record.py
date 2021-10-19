@@ -1,10 +1,10 @@
-class Record():
-    def __init__(self, sharer, file, description, size, official_url, direct_url, short_url, status):
+class Record:
+    def __init__(self, sharer, file, description, size, share_url, direct_url, short_url, status):
         self.sharer = sharer
         self.file = file
         self.description = description
         self.size = size
-        self.official_url = official_url
+        self.share_url = share_url
         self.direct_url = direct_url
         self.short_url = short_url
         self.status = status
@@ -15,7 +15,7 @@ class Record():
             "file": self.file,
             "description": self.description,
             "size": self.size,
-            "official_url": self.official_url,
+            "share_url": self.share_url,
             "direct_url": self.direct_url,
             "short_url": self.short_url,
         }

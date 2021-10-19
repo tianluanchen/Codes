@@ -1,8 +1,6 @@
 from flask import Flask
-from handle_core import get_directurl
-from data_access import save, read
+from api.data_access import read
 import json
-from setting import BANNER,VERSION
 
 # config
 app = Flask(__name__)

@@ -1,7 +1,7 @@
 from pathlib import Path
 from setting import FILE_PATH, RECORDS
 import json
-from basic_class import Record
+from util.Record import Record
 import time
 
 
