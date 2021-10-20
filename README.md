@@ -23,6 +23,6 @@
 
 > 蓝奏云资源存储，转换直链，生成短链，链接保存 (coding)
 
-3. [v2ray安装/管理脚本 ](https://github.com/tianluanchen/scripts/tree/main/3)
+3. [v2ray安装&管理脚本 ](https://github.com/tianluanchen/scripts/tree/main/3)(***forked***)
 
-> 用来一键安装管理v2ray (fork)
+> 用来一键安装管理v2ray，实现科学上网
