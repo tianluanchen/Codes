@@ -1,4 +1,4 @@
-雨云积分签到
+雨云积分签到 <a href="https://github.com/tianluanchen/scripts/">![author](https://img.shields.io/badge/author-ayouth-green)</a>
 =======
 
 ## 介绍
@@ -9,7 +9,7 @@
 
 * 下载 
     
-    [点击下载该文件夹压缩包](http://33h.co/9gk4m)
+    [点击下载该文件夹压缩包](http://33h.co/9gktj)
 
 * 环境配置
 
