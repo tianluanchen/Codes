@@ -6,6 +6,7 @@
 ![Github stars](https://img.shields.io/github/stars/tianluanchen/scripts.svg)
 ![Language](https://img.shields.io/badge/lang-python-blue)
 ![Language](https://img.shields.io/badge/lang-shell-brightgreen)
+![Language](https://img.shields.io/badge/lang-php-orange)
 
 ## 介绍
 
