@@ -2,7 +2,7 @@
 
 我常用的的脚本
 
-<a href="https://github.com/tianluanchen/scripts/">![author](https://img.shields.io/badge/author-ayouth-green)</a>
+[![author](https://img.shields.io/badge/author-ayouth-green)](https://github.com/tianluanchen/scripts/)
 ![Github stars](https://img.shields.io/github/stars/tianluanchen/scripts.svg)
 ![Language](https://img.shields.io/badge/lang-python-blue)
 ![Language](https://img.shields.io/badge/lang-shell-brightgreen)
