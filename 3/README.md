@@ -1,4 +1,4 @@
-xxx安装&管理脚本
+v2ray安装&管理脚本
 =======
 
 ![forked](https://img.shields.io/badge/-forked-red)
