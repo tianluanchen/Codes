@@ -1,7 +1,7 @@
 雨云积分签到 
 =======
 
-<a href="https://github.com/tianluanchen/scripts/">![author](https://img.shields.io/badge/author-ayouth-green)</a>
+[![author](https://img.shields.io/badge/author-ayouth-green)](https://github.com/tianluanchen/scripts/)
 
 ## 介绍
 
