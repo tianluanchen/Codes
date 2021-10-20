@@ -19,9 +19,9 @@
 
 > 雨云自动签到领取积分
 
-2. [蓝奏云资源管理 ](https://github.com/tianluanchen/scripts/tree/main/2)
+2. [蓝奏云资源管理 ](https://github.com/tianluanchen/scripts/tree/main/2)(***unfinished***)
 
-> 蓝奏云资源存储，转换直链，生成短链，链接保存 (coding)
+> 蓝奏云分享链接转换直链，生成短链，保存和管理
 
 3. [v2ray安装&管理脚本 ](https://github.com/tianluanchen/scripts/tree/main/3)(***forked***)
 
