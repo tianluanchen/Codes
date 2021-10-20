@@ -4,6 +4,7 @@
 [![author](https://img.shields.io/badge/author-ayouth-green)](https://github.com/tianluanchen/scripts/)
 ![Language](https://img.shields.io/badge/lang-python-blue)
 ![Language](https://img.shields.io/badge/lang-php-orange)
+![Language](https://img.shields.io/badge/lang-javascript-yellow)
 
 ## 介绍
 
