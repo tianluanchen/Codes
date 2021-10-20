@@ -9,7 +9,7 @@ from pathlib import Path
 
 
 class RainYun():
-    def __init__(self, user, pwd,log_path="rainyun_log.csv"):
+    def __init__(self, user, pwd, log_path="rainyun_log.csv"):
         self.user = user
         self.pwd = pwd
         self.log_path = log_path
@@ -89,7 +89,7 @@ if __name__ == '__main__':
     password = ""
     # log存储路径可自定义，也可不填写，默认为"rainyun_log.csv"，注意文件名应为.csv后缀
     # log_path = ""
-    # demo = RainYun(user, password,log_path)
+    # demo = RainYun(user, password, log_path)
     # 初始化填写密码账户
     demo = RainYun(user, password)
     # 登录

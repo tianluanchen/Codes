@@ -29,7 +29,7 @@
         # log存储路径可自定义，也可不填写，默认为"rainyun_log.csv"，注意文件名应为.csv后缀
         # 例如linux下写绝对路径 /root/rainyun_log.csv
         log_path = "/root/rainyun_log.csv"
-        demo = RainYun(user, password，log_path)
+        demo = RainYun(user, password, log_path)
     ```
 * 运行测试
 
