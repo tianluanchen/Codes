@@ -23,28 +23,33 @@
 * Python脚本配置
 
     ```python
-        #rainyun.py
-        #文件配置，可在八九十行左右找到以下代码进行修改
-        # 填写自己账户
-        user = ""
-        # 密码
-        password = ""
-        # log存储路径可自定义，也可不填写，默认为"rainyun_log.csv"，注意文件名应为.csv后缀
-        # 例如linux下写绝对路径 /root/rainyun_log.csv
-        log_path = "/root/rainyun_log.csv"
-        demo = RainYun(user, password, log_path)
+    #rainyun.py
+    #文件配置，可在八九十行左右找到以下代码进行修改
+    # 填写自己账户
+    user = ""
+    # 密码
+    password = ""
+    # log存储路径可自定义，也可不填写，默认为"rainyun_log.csv"，注意文件名应为.csv后缀
+    # 例如linux下写绝对路径 /root/rainyun_log.csv
+    log_path = "/root/rainyun_log.csv"
+    demo = RainYun(user, password, log_path)
     ```
+
 * 运行测试
 
     ```bash
     python rainyun.py
     # 查看输出判断是否成功 
     ```
+
 * 自动签到部署
 
     为rainyun.py设置定时任务即可。例如可部署在宝塔计划任务中。
-* 通过web访问对日志管理
-    > 自行部署web服务器，并配置php环境，php版本 >= 5.6
+
+* 通过web管理日志
+    
+    > 前端页面使用bootstrap和jquery库，采用get请求进行token验证，并产生session对话，保证删除日志的安全性。<br>
+    请自行部署web服务器，并配置php环境，php版本 >= 5.6
 
     ```php
     //在rainyun_log.php中修改配置
@@ -57,6 +62,11 @@
     $token = "1234";
     ```
 
-    > 以本地为例，服务器运行后，按上例可通过访问 http://127.0.0.1/rainyun_log.php?token=1234 来管理
+    > 以本地为例,服务器运行后，按上例可通过访问 http://127.0.0.1/rainyun_log.php?token=1234 来管理
+
+    web页面演示
+
+    [![日志管理页](https://z3.ax1x.com/2021/10/20/5Dy4JJ.png)](https://imgtu.com/i/5Dy4JJ)
+
 
 
