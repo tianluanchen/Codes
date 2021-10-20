@@ -2,6 +2,7 @@
 =======
 
 [![author](https://img.shields.io/badge/author-ayouth-green)](https://github.com/tianluanchen/scripts/)
+![status](https://img.shields.io/badge/status-unfinished-critical)
 ![Language](https://img.shields.io/badge/lang-python-blue)
 ![Language](https://img.shields.io/badge/lang-javascript-yellow)
 
