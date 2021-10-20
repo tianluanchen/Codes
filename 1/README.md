@@ -49,7 +49,7 @@
 * 通过web管理日志
     
     > 前端页面使用bootstrap和jquery库，采用get请求进行token验证，并产生session对话，保证删除日志的安全性。<br>
-    请自行部署web服务器，并配置php环境，php版本 >= 5.6
+    自行部署web服务器，并配置php环境，php版本 >= 5.6
 
     ```php
     //在rainyun_log.php中修改配置
