@@ -8,7 +8,7 @@
 ## 介绍
 此仓库存储我常用的脚本，包括自己写的和收藏的。
 ## 脚本列表
-1. [rainyun.py](https://github.com/tianluanchen/scripts/blob/main/1/)
+1. [雨云积分签到](https://github.com/tianluanchen/scripts/blob/main/1/)
 > 雨云自动签到领取积分
 2. [蓝奏云资源管理 ](https://github.com/tianluanchen/scripts/tree/main/2)
 > 蓝奏云资源存储，转换直链，生成短链，链接保存 (coding)
