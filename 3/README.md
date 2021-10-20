@@ -16,4 +16,4 @@ v2ray安装&管理脚本
 
 ## 使用
 
-请查看v2ray文件夹内部README文档
+请查看v2ray-scripts文件夹内[README.md](https://github.com/tianluanchen/scripts/blob/main/3/v2ray-scripts/README.md)文档
