@@ -66,7 +66,7 @@
 
     web页面演示
 
-    ![日志管理页](https://z3.ax1x.com/2021/10/20/5Dy4JJ.png)]
+    ![日志管理页](https://z3.ax1x.com/2021/10/20/5Dy4JJ.png)
 
 
 
