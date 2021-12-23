@@ -1,6 +1,4 @@
-# My commonly used scripts 
-
-我常用的的脚本
+# scripts 
 
 [![author](https://img.shields.io/badge/author-ayouth-green)](https://github.com/tianluanchen/scripts/)
 ![Github stars](https://img.shields.io/github/stars/tianluanchen/scripts.svg)
@@ -11,7 +9,7 @@
 
 ## 介绍
 
-此仓库存储我常用的脚本，包括自己写的和收藏的。
+此仓库存储一些用得到的脚本。
 
 ## 脚本列表
 
