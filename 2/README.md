@@ -12,7 +12,7 @@
 
 ## 下载 
 
-[点击下载此脚本压缩包](https://cdn.jsdelivr.net/gh/tianluanchen/download@main/gh/scripts/releases/2.tar.gz)
+[点击下载此脚本压缩包]()
 
 
 ## 使用
