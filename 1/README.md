@@ -1,10 +1,8 @@
 雨云积分签到 
 =======
 
-[![author](https://img.shields.io/badge/author-ayouth-green)](https://github.com/tianluanchen/scripts/)
-![Language](https://img.shields.io/badge/lang-python-blue)
-![Language](https://img.shields.io/badge/lang-php-orange)
-![Language](https://img.shields.io/badge/lang-javascript-yellow)
+[![PythonVersion](https://img.shields.io/badge/Python-v3.5-blue?logo=python&style=flat-square)](https://www.python.org/downloads/)
+[![PythonVersion](https://img.shields.io/badge/PHP-v5.6-orange?logo=php&style=flat-square)](https://www.php.net/downloads)
 
 ## 介绍
 
