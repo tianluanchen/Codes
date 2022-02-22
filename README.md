@@ -1,6 +1,6 @@
 # scripts 
 
-[![GitHub license](https://img.shields.io/github/license/tianluanchen/OnlinePortScan?style=flat-square)](https://github.com/tianluanchen/OnlinePortScan/blob/main/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/tianluanchen/scripts?style=flat-square)](https://github.com/tianluanchen/OnlinePortScan/blob/main/LICENSE)
 
 
 ## 介绍
