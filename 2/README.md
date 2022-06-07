@@ -1,7 +1,7 @@
 GO,Python 异步HTTP请求测试
 =======
 
-[![PythonVersion](https://img.shields.io/badge/Python-v3.8.5-blue?logo=python&style=flat-square)](https://www.python.org/downloads/) [![GoVersion](https://img.shields.io/badge/Go-v1.17.2-blue?logo=go&style=flat-square)](https://www.php.net/downloads)
+[![PythonVersion](https://img.shields.io/badge/Python-v3.8.5-blue?logo=python&style=flat-square)](https://www.python.org/downloads/) [![GoVersion](https://img.shields.io/badge/Go-v1.17.2-blue?logo=go&style=flat-square)](https://go.dev/dl/)
 
 ## 介绍
 

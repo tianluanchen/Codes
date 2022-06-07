@@ -1,0 +1,19 @@
+{
+    "name": "gh-readme-md-gen",
+    "version": "1.0.0",
+    "description": "github-readme-stats项目Markdown或URL快速生成",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "rollup -c"
+    },
+    "keywords": [],
+    "author": "Ayouth",
+    "license": "GPL-3",
+    "devDependencies": {
+        "@rollup/plugin-commonjs": "^22.0.0",
+        "rollup": "^2.75.6",
+        "rollup-plugin-terser": "^7.0.2",
+        "uglifyjs": "^2.4.11"
+    }
+}
