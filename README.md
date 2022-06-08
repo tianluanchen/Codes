@@ -14,9 +14,9 @@
 
 > 测试Go和Python异步HTTP请求的性能，也可以针对一些网站进行请求测试。
 
-3. [github-readme-stats快速生成Markdown和URL](./3/)
+3. [基于GitHub Readme Stats快速生成README文档](./3/)
 
-> 依据github-readme-stats项目的规则快速生成README.md内容
+> 依据GitHub Readme Stats项目的规则快速生成README.md文档
 
 ## License
 

@@ -13,9 +13,9 @@ export default defineConfig([
         plugins: [commonjs(), terser()]
     },
     {
-        input: './quick-gen.js',
+        input: './quickstart.js',
         output: {
-            file: "./dist/quick-gen.min.js",
+            file: "./dist/quickstart.min.js",
             format: 'iife',
             compact: true
         },

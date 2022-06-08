@@ -1,1 +1,1 @@
-module.exports = require("./src/gh-readme-md-gen");
+module.exports = require("./src/gh-readme-gen");

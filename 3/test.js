@@ -1,4 +1,5 @@
 const { setAPI, genStatCardMD, genTopLangsMD, genPinMD, genStatCardURL, genPinURL, genTopLangsURL } = require("./index");
+const { genStatCardHTML } = require("./src/gen-html");
 // 测试
 
 // 设置API 若自己未部署服务则不配置
@@ -8,14 +9,26 @@ const username = "your-username"; // 用户
 const theme = "dark"; // 主题
 
 // genStatCardURL等函数与下列用法一致，只不过只返回url
-
+// genStatCardHTML等函数与genStatCardMD类似，但多一个imgOpt对象参数，设置img的属性
 console.log(
+    genStatCardHTML({
+        username: username,
+        theme: theme,
+        imgOpt: { //img的属性配置
+            // align:"", 
+            // height:""
+            // .... 配置
+        },
+        link: "xxx网址",//link 指定markdown图片点击跳转的网址
+        show_icons: false,// 显示图标否
+        //... 配置 与github-readme-stats配置相同
+    }),
     // 生成大的统计卡片markdown
     genStatCardMD({
         username: username,
         theme: theme,
         link: "xxx网址",//link 指定markdown图片点击跳转的网址
-        show_icons: false,// 显示图表否
+        show_icons: false,// 显示图标否
         //... 配置 与github-readme-stats配置相同
     }),
     "\n",

@@ -1,7 +1,7 @@
 {
-    "name": "gh-readme-md-gen",
+    "name": "gh-readme-gen",
     "version": "1.0.0",
-    "description": "github-readme-stats项目Markdown或URL快速生成",
+    "description": "基于GitHub Readme Stats快速生成README文档",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
