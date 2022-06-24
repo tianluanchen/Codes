@@ -3,16 +3,16 @@
 """
 @Author       :  Ayouth
 @Date         :  2021-10-03 GMT+0800
-@LastEditTime :  2022-06-03 GMT+0800
+@LastEditTime :  2022-06-24 GMT+0800
 @FilePath     :  rainyun.py
 @Description  :  雨云积分签到脚本
 @Copyright (c) 2022 by Ayouth, All Rights Reserved. 
 """
 import requests
-import re
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 import logging
+import json
 
 
 class RainYun():
@@ -26,8 +26,14 @@ class RainYun():
         @param {str} log_file 日志文件路径
         @return {*}
         """
+        # 认证信息
         self.user = user
         self.pwd = pwd
+        self.json_data = json.dumps({
+            "field": self.user,
+            "password": self.pwd
+        })
+        # 日志输出
         self.logger = logging.getLogger(self.user)
         formatter = logging.Formatter(datefmt='%Y/%m/%d %H:%M:%S',
                                       fmt="%(asctime)s 雨云 %(levelname)s: 用户<%(name)s> %(message)s")
@@ -35,27 +41,18 @@ class RainYun():
         handler.setFormatter(formatter)
         self.logger.addHandler(handler)
         self.logger.setLevel(logging.INFO)
+        # 签到结果初始化
         self.signin_result = False
+        # 请求设置
         self.session = requests.Session()
         self.session.headers.update({
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4644.0 Safari/537.36 Edg/96.0.1028.0",
-            "origin": "https://www.rainyun.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36",
+            "Origin": "https://api.rainyun.com",
+            "Referer": "https://api.rainyun.com"
         })
-        self.login_url = "https://www.rainyun.com/login"
-        self.signin_url = "https://www.rainyun.com/app/usr/reward"
-        self.logout_url = "https://www.rainyun.com/app/logout"
-
-    def get_token(self) -> None:
-        """
-        @description: 获取Token
-        @param {*} self
-        @return {*}
-        """
-        res = self.session.get(url=self.login_url)
-        # 正则提取
-        self.token = re.findall(
-            'data: {_token:"(.*?)", log_name:', res.content.decode('utf8'))[0]
-        self.logger.info('token获取成功')
+        self.login_url = "https://api.v2.rainyun.com/user/login"
+        self.signin_url = "https://api.v2.rainyun.com/user/reward/tasks"
+        self.logout_url = "https://api.v2.rainyun.com/user/logout"
 
     def login(self) -> None:
         """
@@ -63,19 +60,15 @@ class RainYun():
         @param {*} self
         @return {*}
         """
-        self.get_token()
         res = self.session.post(
-            url=self.login_url, data={
-                "_token": self.token,
-                "log_name": self.user,
-                "log_pass": self.pwd,
-                "log_isremember": 0
+            url=self.login_url, headers={"Content-Type": "application/json"}, data=self.json_data)
+        if res.text.find("200") > -1:
+            self.logger.info("登录成功")
+            self.session.headers.update({
+                "X-CSRF-Token": res.cookies.get("X-CSRF-Token", "")
             })
-        text = res.content.decode('utf8')
-        if text == "1":
-            self.logger.error('登录成功')
         else:
-            self.logger.info('登录失败')
+            self.logger.error(f"登录失败，响应信息：{res.text}")
 
     def signin(self) -> None:
         """
@@ -83,22 +76,23 @@ class RainYun():
         @param {*} self
         @return {*}
         """
-        res = self.session.post(url=self.signin_url, data={
-            "_token": self.token,
-            "Action": "GetReward",
-            "TaskName": "每日签到",
-        })
-        text = res.content.decode('utf8')
-        if text == "1":
-            self.logger.info('成功签到并领取积分')
+        res = self.session.post(url=self.signin_url, headers={"Content-Type": "application/json"}, data=json.dumps({
+            "task_name": "每日签到",
+            "verifyCode": ""
+        }))
+        if res.text.find("200") > -1:
+            self.logger.info("成功签到并领取积分")
             self.signin_result = True
         else:
-            self.logger.error('签到失败')
+            self.logger.error(f"签到失败，响应信息：{res.text}")
             self.signin_result = False
 
     def logout(self) -> None:
-        self.session.get(url=self.logout_url)
-        self.logger.info('已退出登录')
+        res = self.session.post(url=self.logout_url)
+        if res.text.find("200") > -1:
+            self.logger.info('已退出登录')
+        else:
+            self.logger.warning(f"退出登录时出了些问题，响应信息：{res.text}")
 
     def log(self, log_file: str) -> None:
         """

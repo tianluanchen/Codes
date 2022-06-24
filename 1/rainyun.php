@@ -2,7 +2,7 @@
 /*
  * @Author       :  Ayouth
  * @Date         :  2021-10-03 GMT+0800
- * @LastEditTime :  2022-06-03 GMT+0800
+ * @LastEditTime :  2022-06-24 GMT+0800
  * @FilePath     :  rainyun.php
  * @Description  :  日志审阅
  * Copyright (c) 2022 by Ayouth, All Rights Reserved. 
@@ -295,6 +295,14 @@ function deleteFile(string $file)
             </thead>
             <tbody>
                 <?php print(renderTable()); ?>
+                <script>
+                    let trArr = [...document.querySelectorAll("tbody tr")];
+                    let df = document.createDocumentFragment();
+                    while (trArr.length > 0) {
+                        df.appendChild(trArr.pop());
+                    }
+                    document.querySelector("tbody").appendChild(df);
+                </script>
             </tbody>
         </table>
         <div class="control">
