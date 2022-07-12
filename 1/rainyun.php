@@ -52,9 +52,10 @@ function handle_user_req()
 {
     global $script;
     global $file;
+    global $session_name;
     // 登出
     if (isset($_GET['logout'])) {
-        session_destroy();
+        unset($_SESSION[$session_name]);
         header('Location:' . $_SERVER['HTTP_REFERER']);
         exit(0);
     }
