@@ -2,7 +2,7 @@
 /*
  * @Author       :  Ayouth
  * @Date         :  2021-10-03 GMT+0800
- * @LastEditTime :  2022-06-24 GMT+0800
+ * @LastEditTime :  2022-07-12 GMT+0800
  * @FilePath     :  rainyun.php
  * @Description  :  日志审阅
  * Copyright (c) 2022 by Ayouth, All Rights Reserved. 
@@ -11,44 +11,42 @@
 // 若有bug 隐藏错误
 error_reporting(E_ERROR);
 ini_set("display_errors", "Off");
-
 //自定义网页标题和大标题
-$title = "雨云签到日志";
+$title = '雨云签到日志';
 //文件路径，推荐绝对路径
-$file = "./rainyun-signin-log.csv";
+$file = './rainyun-signin-log.csv';
 //设置审阅令牌
 $token = "123";
 // session名
-$session_name  = 'rainyun_signin_log_token';
-
-$verified = false;
+$session_name  = 'rianyun';
 // 开启会话
 session_start([
-    "cookie_httponly" => true,
-    "cookie_samesite" => "Strict"
+    'cookie_httponly' => true,
+    'cookie_samesite' => 'Strict'
 ]);
-
-// 作为反馈
+// 是否验证
+$verified = false;
+// 弹窗反馈
 $script = '';
 
 // 判断是否提交了验证请求
 if (isset($_POST['token'])) {
     if ($_POST['token'] == $token) {
-        $script .= '<script>alert("验证成功");</script>';
+        $script .= 'alert("验证成功");';
         $_SESSION[$session_name] = 'verified';
     } else {
-        $script .= '<script>alert("验证失败");</script>';
+        $script .= 'alert("验证失败");';
     }
 }
-
 
 // 判断当前是否是验证状态
 if (isset($_SESSION[$session_name]) && $_SESSION[$session_name] == 'verified') {
     $verified = true;
     // 处理用户请求
     handle_user_req();
+} else {
+    $title = '请先验证';
 }
-
 // 处理用户请求
 function handle_user_req()
 {
@@ -57,22 +55,22 @@ function handle_user_req()
     // 登出
     if (isset($_GET['logout'])) {
         session_destroy();
-        header('Location:' . $_SERVER['PHP_SELF']);
+        header('Location:' . $_SERVER['HTTP_REFERER']);
         exit(0);
     }
     // 删除
     if (isset($_POST['delete'])) {
         deleteFile($file);
-        $script .= '<script>alert("删除成功");</script>';
+        $script .= 'alert("删除成功");';
     }
 }
 
 // 读取并渲染表单
-function renderTable()
+function renderTable(): string
 {
     global $file, $script;
     if (!is_file($file)) {
-        $script .= '<script>alert("日志文件不存在");</script>';
+        $script .= 'alert("日志文件不存在，请检查路径");';
         return '';
     }
     $tb = "";
@@ -103,7 +101,6 @@ function renderTable()
     fclose($f);
     return $tb;
 }
-
 // 删除文件
 function deleteFile(string $file)
 {
@@ -111,7 +108,6 @@ function deleteFile(string $file)
     fwrite($f, 'date,user,status' . PHP_EOL);
     fclose($f);
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="zh">
@@ -120,7 +116,7 @@ function deleteFile(string $file)
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php print($title); ?></title>
+    <title><?php echo ($title); ?></title>
     <style>
         * {
             margin: 0;
@@ -218,6 +214,7 @@ function deleteFile(string $file)
         th,
         td {
             padding: 10px 12px;
+            word-break: break-all;
         }
 
         th {
@@ -324,7 +321,11 @@ function deleteFile(string $file)
             }
         </script>
     <?php } ?>
-    <?php print($script); ?>
+    <?php if (mb_strlen($script) > 0) { ?>
+        <script>
+            <?php echo ($script); ?>
+        </script>
+    <?php } ?>
 </body>
 
 </html>
